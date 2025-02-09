@@ -1,0 +1,506 @@
+/* assets/css/diet.css */
+
+.diet-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Meal Planner Section */
+.meal-planner {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.planner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.date-selector {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.date-nav {
+    background: var(--secondary-bg);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.date-nav:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+#selected-date {
+    min-width: 120px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Meal Sections */
+.meals-container {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.meal-section {
+    background: var(--secondary-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.meal-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.meal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.meal-header h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+}
+
+.meal-calories {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.meal-items {
+    min-height: 50px;
+    margin-bottom: 1rem;
+}
+
+.food-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.food-item:hover {
+    transform: translateX(5px);
+}
+
+.food-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1rem;
+}
+
+.food-name {
+    color: var(--text-color);
+}
+
+.food-calories {
+    color: var(--text-secondary);
+}
+
+.food-macros {
+    display: flex;
+    gap: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.remove-food {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.remove-food:hover {
+    color: #ff4757;
+}
+
+.add-food-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: none;
+    border: 2px dashed var(--border-color);
+    color: var(--text-secondary);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-food-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Nutrition Summary */
+.nutrition-summary {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.summary-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+/* Daily Goals Card */
+.goal-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 2rem 0;
+}
+
+.progress-circle {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.progress-circle svg {
+    width: 80px;
+    height: 80px;
+    transform: rotate(-90deg);
+}
+
+.progress-circle circle {
+    fill: none;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 220;
+    stroke-dashoffset: 0;
+}
+
+circle.bg {
+    stroke: var(--secondary-bg);
+}
+
+circle.progress {
+    stroke: var(--primary-color);
+    transition: stroke-dashoffset 0.3s ease;
+}
+
+.percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.percentage .number {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.percentage .percent {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.calories-remaining {
+    text-align: center;
+}
+
+.calories-remaining p {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.calories-remaining h4 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.2rem;
+}
+
+.calories-remaining span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Macros Card */
+.macro-bars {
+    margin-top: 1.5rem;
+}
+
+.macro-bar {
+    margin-bottom: 1rem;
+}
+
+.bar-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.progress-bar {
+    height: 8px;
+    background: var(--secondary-bg);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar .fill {
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.fill.protein { background: #ff4757; }
+.fill.carbs { background: #2ed573; }
+.fill.fat { background: #ffa502; }
+
+/* Water Tracker */
+.water-progress {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.water-container {
+    width: 60px;
+    height: 100px;
+    background: var(--secondary-bg);
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.water-level {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #70a1ff;
+    transition: height 0.3s ease;
+}
+
+.water-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+}
+
+.water-info {
+    flex: 1;
+    text-align: center;
+}
+
+.water-info p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.add-water-btn {
+    padding: 0.5rem 1rem;
+    background: #70a1ff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-water-btn:hover {
+    background: #1e90ff;
+    transform: translateY(-2px);
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-body {
+    padding: 1.5rem;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.search-food {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-food input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-bg);
+    color: var(--text-color);
+}
+
+.food-results {
+    margin-bottom: 1.5rem;
+}
+
+.food-result {
+    padding: 1rem;
+    background: var(--secondary-bg);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.food-result:hover {
+    transform: translateX(5px);
+    background: var(--border-color);
+}
+
+.quick-add h4 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-bg);
+    color: var(--text-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .diet-container {
+        grid-template-columns: 1fr 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .diet-container {
+        grid-template-columns: 1fr;
+    }
+
+    .meal-section {
+        padding: 1rem;
+    }
+
+    .food-macros {
+        display: none;
+    }
+
+    .goal-progress {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .water-progress {
+        flex-direction: column;
+    }
+
+    .water-container {
+        width: 40px;
+        height: 80px;
+    }
+}
+
+/* Dark Theme Compatibility */
+.dark-theme .water-level {
+    opacity: 0.8;
+}
+
+.dark-theme .progress-circle circle.bg {
+    stroke: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .food-result:hover {
+    background: rgba(255, 255, 255, 0.1);
+}

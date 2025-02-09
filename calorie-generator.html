@@ -1,0 +1,129 @@
+<!-- calorie-generator.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaloriX - Calorie Calculator</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/calorie.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-fire"></i>
+            <span>CaloriX</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Dashboard</a></li>
+            <li><a href="calorie-generator.html" class="nav-link active">Calorie Calculator</a></li>
+            <li><a href="exercise-library.html" class="nav-link">Exercise Library</a></li>
+            <li><a href="diet.html" class="nav-link">Diet Planner</a></li>
+            <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
+        </ul>
+    </nav>
+
+    <div class="calculator-container">
+        <div class="calculator-card">
+            <div class="calculator-header">
+                <h2>Calorie Burn Calculator</h2>
+                <p>Calculate calories burned during your workout</p>
+            </div>
+
+            <form id="calorie-form">
+                <div class="form-section">
+                    <label>Select Activity</label>
+                    <div class="activity-grid">
+                        <div class="activity-item" data-activity="running">
+                            <i class="fas fa-running"></i>
+                            <span>Running</span>
+                        </div>
+                        <div class="activity-item" data-activity="cycling">
+                            <i class="fas fa-bicycle"></i>
+                            <span>Cycling</span>
+                        </div>
+                        <div class="activity-item" data-activity="swimming">
+                            <i class="fas fa-swimmer"></i>
+                            <span>Swimming</span>
+                        </div>
+                        <div class="activity-item" data-activity="walking">
+                            <i class="fas fa-walking"></i>
+                            <span>Walking</span>
+                        </div>
+                        <div class="activity-item" data-activity="yoga">
+                            <i class="fas fa-pray"></i>
+                            <span>Yoga</span>
+                        </div>
+                        <div class="activity-item" data-activity="weightlifting">
+                            <i class="fas fa-dumbbell"></i>
+                            <span>Weights</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <label for="weight">Weight (kg)</label>
+                    <div class="slider-container">
+                        <input type="range" id="weight" min="30" max="200" value="70" class="slider">
+                        <div class="slider-value" id="weight-value">70 kg</div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <label for="duration">Duration (minutes)</label>
+                    <div class="slider-container">
+                        <input type="range" id="duration" min="5" max="180" value="30" class="slider">
+                        <div class="slider-value" id="duration-value">30 min</div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <label for="intensity">Intensity Level</label>
+                    <div class="intensity-buttons">
+                        <button type="button" class="intensity-btn" data-intensity="low">Low</button>
+                        <button type="button" class="intensity-btn active" data-intensity="moderate">Moderate</button>
+                        <button type="button" class="intensity-btn" data-intensity="high">High</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="calculate-btn">
+                    <i class="fas fa-calculator"></i>
+                    Calculate Calories
+                </button>
+            </form>
+
+            <div class="results" id="results">
+                <div class="result-circle">
+                    <div class="calories-number">0</div>
+                    <div class="calories-text">calories</div>
+                </div>
+                <div class="additional-info">
+                    <div class="info-item">
+                        <i class="fas fa-stopwatch"></i>
+                        <span id="time-to-burn">0 minutes</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-pizza-slice"></i>
+                        <span id="food-equivalent">0 slices of pizza</span>
+                    </div>
+                </div>
+                <button id="save-workout" class="save-btn">
+                    <i class="fas fa-save"></i>
+                    Save to Dashboard
+                </button>
+            </div>
+        </div>
+
+        <div class="history-card">
+            <h3>Recent Calculations</h3>
+            <div id="calculation-history" class="history-list">
+                <!-- History items will be added here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/calorie.js"></script>
+</body>
+</html>

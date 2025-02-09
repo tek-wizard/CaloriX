@@ -1,0 +1,233 @@
+<!-- diet.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaloriX - Diet Planner</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/diet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-fire"></i>
+            <span>CaloriX</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Dashboard</a></li>
+            <li><a href="calorie-generator.html" class="nav-link">Calorie Calculator</a></li>
+            <li><a href="exercise-library.html" class="nav-link">Exercise Library</a></li>
+            <li><a href="diet.html" class="nav-link active">Diet Planner</a></li>
+            <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
+        </ul>
+    </nav>
+
+    <div class="diet-container">
+        <!-- Meal Planner Section -->
+        <div class="meal-planner">
+            <div class="planner-header">
+                <h2>Meal Planner</h2>
+                <div class="date-selector">
+                    <button class="date-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <span id="selected-date">Today</span>
+                    <button class="date-nav next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <div class="meals-container">
+                <div class="meal-section" data-meal="breakfast">
+                    <div class="meal-header">
+                        <h3><i class="fas fa-sun"></i> Breakfast</h3>
+                        <span class="meal-calories">0 cal</span>
+                    </div>
+                    <div class="meal-items"></div>
+                    <button class="add-food-btn">
+                        <i class="fas fa-plus"></i> Add Food
+                    </button>
+                </div>
+
+                <div class="meal-section" data-meal="lunch">
+                    <div class="meal-header">
+                        <h3><i class="fas fa-cloud-sun"></i> Lunch</h3>
+                        <span class="meal-calories">0 cal</span>
+                    </div>
+                    <div class="meal-items"></div>
+                    <button class="add-food-btn">
+                        <i class="fas fa-plus"></i> Add Food
+                    </button>
+                </div>
+
+                <div class="meal-section" data-meal="dinner">
+                    <div class="meal-header">
+                        <h3><i class="fas fa-moon"></i> Dinner</h3>
+                        <span class="meal-calories">0 cal</span>
+                    </div>
+                    <div class="meal-items"></div>
+                    <button class="add-food-btn">
+                        <i class="fas fa-plus"></i> Add Food
+                    </button>
+                </div>
+
+                <div class="meal-section" data-meal="snacks">
+                    <div class="meal-header">
+                        <h3><i class="fas fa-cookie"></i> Snacks</h3>
+                        <span class="meal-calories">0 cal</span>
+                    </div>
+                    <div class="meal-items"></div>
+                    <button class="add-food-btn">
+                        <i class="fas fa-plus"></i> Add Food
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nutrition Summary -->
+        <div class="nutrition-summary">
+            <div class="summary-card daily-goals">
+                <h3>Daily Goals</h3>
+                <div class="goal-progress">
+                    <div class="progress-circle">
+                        <svg>
+                            <circle class="bg" cx="40" cy="40" r="35"></circle>
+                            <circle class="progress" cx="40" cy="40" r="35"></circle>
+                        </svg>
+                        <div class="percentage">
+                            <span class="number">0</span>
+                            <span class="percent">%</span>
+                        </div>
+                    </div>
+                    <div class="calories-remaining">
+                        <p>Remaining</p>
+                        <h4>2000</h4>
+                        <span>calories</span>
+                    </div>
+                </div>
+                <button class="edit-goals-btn">
+                    <i class="fas fa-edit"></i> Edit Goals
+                </button>
+            </div>
+
+            <div class="summary-card macros">
+                <h3>Macronutrients</h3>
+                <div class="macro-bars">
+                    <div class="macro-bar">
+                        <div class="bar-label">
+                            <span>Protein</span>
+                            <span>0/50g</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="fill protein" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="macro-bar">
+                        <div class="bar-label">
+                            <span>Carbs</span>
+                            <span>0/250g</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="fill carbs" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="macro-bar">
+                        <div class="bar-label">
+                            <span>Fat</span>
+                            <span>0/65g</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="fill fat" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-card water-tracker">
+                <h3>Water Tracker</h3>
+                <div class="water-progress">
+                    <div class="water-container">
+                        <div class="water-level"></div>
+                        <div class="water-overlay"></div>
+                    </div>
+                    <div class="water-info">
+                        <p><span id="water-amount">0</span> / 8 glasses</p>
+                        <button class="add-water-btn">
+                            <i class="fas fa-plus"></i> Add Glass
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Food Modal -->
+    <div class="modal" id="add-food-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Food</h3>
+                <button class="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="search-food">
+                    <input type="text" placeholder="Search for food...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="food-results"></div>
+                <div class="quick-add">
+                    <h4>Quick Add</h4>
+                    <form id="quick-add-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Food name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" placeholder="Calories" required>
+                            <input type="number" placeholder="Protein (g)">
+                            <input type="number" placeholder="Carbs (g)">
+                            <input type="number" placeholder="Fat (g)">
+                        </div>
+                        <button type="submit" class="add-btn">Add Food</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Goals Modal -->
+    <div class="modal" id="edit-goals-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Daily Goals</h3>
+                <button class="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="goals-form">
+                    <div class="form-group">
+                        <label>Daily Calories</label>
+                        <input type="number" id="calories-goal" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Protein (g)</label>
+                        <input type="number" id="protein-goal" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Carbohydrates (g)</label>
+                        <input type="number" id="carbs-goal" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Fat (g)</label>
+                        <input type="number" id="fat-goal" required>
+                    </div>
+                    <button type="submit" class="save-btn">Save Goals</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/diet.js"></script>
+</body>
+</html>

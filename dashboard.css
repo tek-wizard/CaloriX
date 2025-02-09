@@ -1,0 +1,1254 @@
+/* assets/css/dashboard.css */
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+/* Performance Cards */
+.performance-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.performance-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.performance-card:hover {
+    transform: translateY(-5px);
+}
+
+.performance-card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.performance-card h3 {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.performance-card .number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Graph Section */
+.graph-section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.graph-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.graph-controls button {
+    padding: 0.5rem 1rem;
+    background: var(--secondary-bg);
+    color: var(--text-color);
+    border-radius: 20px;
+}
+
+.graph-controls button.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Todo Section */
+.todo-section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.todo-list {
+    margin: 1rem 0;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: var(--secondary-bg);
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.todo-item:hover {
+    transform: translateX(5px);
+}
+
+.todo-item input[type="checkbox"] {
+    margin-right: 1rem;
+}
+
+.todo-item .todo-text {
+    flex: 1;
+}
+
+.todo-item .todo-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.todo-item button {
+    padding: 0.5rem;
+    background: none;
+    color: var(--text-secondary);
+}
+
+.todo-item button:hover {
+    color: var(--primary-color);
+}
+
+.add-todo-btn {
+    width: 100%;
+    padding: 1rem;
+    background: none;
+    border: 2px dashed var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.add-todo-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .performance-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Add to assets/css/dashboard.css */
+
+.goal-progress {
+    margin: 1rem 0;
+}
+
+.progress-bar {
+    height: 8px;
+    background: var(--secondary-bg);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0.5rem 0;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: var(--primary-color);
+    transform-origin: left;
+    animation: progress-fill 1s ease-out forwards;
+}
+
+@keyframes progress-fill {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(var(--progress)); }
+}
+
+.goal-details {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 1rem 0;
+}
+
+.goal-details p {
+    margin: 0.3rem 0;
+}
+
+.edit-goal-btn {
+    padding: 0.5rem 1rem;
+    background: var(--secondary-bg);
+    color: var(--text-color);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    width: 100%;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.edit-goal-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.goal-input {
+    margin: 1rem 0;
+}
+
+.goal-input label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.goal-input input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.progress-text {
+    text-align: right;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Performance Cards Enhancement */
+.calories-display,
+.workouts-display {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.calories-display .number,
+.workouts-display .number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.calories-display .unit,
+.workouts-display .unit {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-left: 0.5rem;
+}
+
+.card-details {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.view-details-btn {
+    width: 100%;
+    padding: 0.5rem;
+    background: var(--secondary-bg);
+    color: var(--text-color);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.view-details-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Modal Content Styles */
+.calories-breakdown,
+.workouts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.breakdown-item,
+.workout-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--secondary-bg);
+    border-radius: 8px;
+}
+
+.activity-info,
+.workout-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.workout-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.workout-activity {
+    font-weight: 500;
+}
+
+.workout-time {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.calories-value,
+.workout-calories {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.no-data {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 2rem;
+}
+
+/* Todo List Styles */
+.empty-todo {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+}
+
+.empty-todo i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--secondary-bg);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.todo-item.completed .todo-text {
+    /* text-decoration: line-through; */
+    color: var(--text-secondary);
+}
+
+.todo-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.todo-time {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.todo-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.todo-actions button {
+    padding: 0.5rem;
+    background: none;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.todo-actions button:hover {
+    color: var(--primary-color);
+}
+
+/* Custom Checkbox */
+.checkbox-container {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    width: 20px;
+    height: 20px;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    border-color: var(--primary-color);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: var(--text-color);
+}
+
+.todo-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.todo-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.input-counter {
+    text-align: right;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.modal-footer button {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn {
+    background: var(--secondary-bg);
+    color: var(--text-color);
+}
+
+.cancel-btn:hover {
+    background: var(--border-color);
+}
+
+.save-btn, .delete-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+.save-btn:hover {
+    background: var(--primary-dark);
+}
+
+.save-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.delete-btn {
+    background: var(--error-color);
+}
+
+.delete-btn:hover {
+    background: #ff1a1a;
+}
+
+/* Ensure modal is above other content */
+.modal {
+    z-index: 9999;
+}
+
+/* Animation for modal content */
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal.active .modal-content {
+    animation: modalSlideIn 0.3s ease forwards;
+}
+
+/* Add to your dashboard.css */
+.text-secondary {
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.modal-body p {
+    margin: 0.5rem 0;
+}
+
+/* Add to your dashboard.css */
+/* .todo-item.completed .todo-text {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+}
+
+.todo-item.completed .checkbox-container .checkmark {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.todo-item.completed .todo-actions button {
+    opacity: 0.7;
+}
+
+.checkbox-container {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    width: 20px;
+    height: 20px;
+} */
+
+/* .checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+} */
+
+.checkbox-container .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    border-color: var(--primary-color);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkbox-container .checkmark:after {
+    content: '';
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Update in dashboard.css */
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.todo-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.todo-item.completed .todo-text {
+    color: #34c759; /* Green color for completed tasks */
+    font-weight: 500;
+}
+
+.todo-item.pending .todo-text {
+    color: #1a73e8; /* Blue color for pending tasks */
+    font-weight: 500;
+}
+
+.todo-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.todo-text {
+    font-size: 1.1rem;
+}
+
+.todo-time {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-left: auto;
+    padding-right: 1rem;
+}
+
+.todo-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.todo-actions button {
+    padding: 0.5rem;
+    background: none;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.todo-actions button:hover {
+    color: var(--primary-color);
+}
+
+/* Checkbox styles */
+.checkbox-container {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    width: 20px;
+    height: 20px;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-container .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.todo-item.completed .checkbox-container .checkmark {
+    border-color: #34c759;
+    background-color: #34c759;
+}
+
+.todo-item.pending .checkbox-container:hover .checkmark {
+    border-color: #1a73e8;
+}
+
+.checkbox-container .checkmark:after {
+    content: '';
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Empty state */
+.empty-todo {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+}
+
+.empty-todo i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Add/Update in dashboard.css */
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.todo-item.animating {
+    animation: todoToggle 0.3s ease;
+}
+
+@keyframes todoToggle {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.todo-item.completed {
+    color: #34c759;
+}
+
+.todo-item.pending {
+    color: #1a73e8;
+}
+
+.todo-item.completed .todo-text {
+    color: #34c759;
+}
+
+.todo-item.pending .todo-text {
+    color: #1a73e8;
+}
+
+/* Rest of your existing todo-item styles... */
+/* Add to dashboard.css */
+.todo-separator {
+    margin: 1.5rem 0;
+    text-align: center;
+    position: relative;
+    height: 20px;
+}
+
+.todo-separator span {
+    background: var(--card-bg);
+    padding: 0 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 1;
+}
+
+.todo-separator::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    background: var(--border-color);
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.todo-item.animating {
+    animation: todoToggle 0.3s ease;
+}
+
+@keyframes todoToggle {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translateY(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.todo-item.completed {
+    opacity: 0.8;
+}
+
+.todo-item.completed .todo-text {
+    color: #34c759;
+}
+
+.todo-item.pending .todo-text {
+    color: #1a73e8;
+}
+
+/* Update the animation timing */
+.todo-list {
+    transition: all 0.3s ease;
+}
+
+/* Update these styles in dashboard.css */
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.todo-item.animating {
+    animation: todoToggle 0.3s ease;
+}
+
+@keyframes todoToggle {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translateY(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.todo-item.completed {
+    opacity: 0.8;
+}
+
+.todo-item.completed .todo-text {
+    color: #34c759;
+    /* Remove this line if it exists: text-decoration: line-through; */
+}
+
+.todo-item.pending .todo-text {
+    color: #1a73e8;
+}
+
+.todo-text {
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.todo-separator {
+    margin: 1.5rem 0;
+    text-align: center;
+    position: relative;
+    height: 20px;
+}
+
+.todo-separator span {
+    background: var(--card-bg);
+    padding: 0 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 1;
+}
+
+.todo-separator::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    background: var(--border-color);
+}
+
+/* Update modal styles in dashboard.css */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+/* Add styles for when body has overflow hidden */
+body.modal-open {
+    padding-right: var(--scrollbar-width, 0px); /* Prevent layout shift */
+}
+
+/* Update modal styles in dashboard.css */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+/* Add styles for when body has overflow hidden */
+body.modal-open {
+    padding-right: var(--scrollbar-width, 0px); /* Prevent layout shift */
+}
+
+/* Add to dashboard.css */
+.calories-summary {
+    text-align: center;
+}
+
+.total-calories {
+    margin-bottom: 2rem;
+}
+
+.total-calories .number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.total-calories .label {
+    display: block;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+.calories-breakdown {
+    text-align: left;
+}
+
+.breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--secondary-bg);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.activity-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.activity-details {
+    text-align: right;
+}
+
+.activity-details .calories {
+    display: block;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.activity-details .count {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.workouts-timeline {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.workout-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-left: 2px solid var(--border-color);
+    margin-left: 1rem;
+    position: relative;
+}
+
+.workout-item::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 1.5rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary-color);
+}
+
+.workout-time {
+    min-width: 80px;
+    color: var(--text-secondary);
+}
+
+.workout-type {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.workout-calories {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.no-workouts {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+}
+
+.no-workouts i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Update in dashboard.css */
+.graph-section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.graph-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.graph-header h2 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.graph-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.graph-controls button {
+    padding: 0.5rem 1rem;
+    background: var(--secondary-bg);
+    color: var(--text-color);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.graph-controls button:hover {
+    background: var(--border-color);
+}
+
+.graph-controls button.active {
+    background: var(--primary-color);
+    color: white;
+}
