@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaloriX - Dashboard</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-fire"></i>
+            <span>CaloriX</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link active">Dashboard</a></li>
+            <li><a href="calorie-generator.html" class="nav-link">Calorie Calculator</a></li>
+            <li><a href="exercise-library.html" class="nav-link">Exercise Library</a></li>
+            <li><a href="diet.html" class="nav-link">Diet Planner</a></li>
+            <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
+        </ul>
+    </nav>
+
+    <div class="dashboard-container">
+        <!-- Performance Cards -->
+        <div class="performance-cards">
+            <div class="card">
+                <i class="fas fa-fire-flame-curved"></i>
+                <h3>Today's Calories</h3>
+                <p id="today-calories">0</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-dumbbell"></i>
+                <h3>Workouts Done</h3>
+                <p id="workouts-done">0</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-trophy"></i>
+                <h3>Weekly Goal</h3>
+                <p id="weekly-goal">0%</p>
+            </div>
+        </div>
+
+        <!-- Graph Section -->
+        <div class="graph-section">
+            <div class="graph-header">
+                <h2>Calorie Burn Trends</h2>
+                <div class="graph-controls">
+                    <button data-period="week" class="active">Week</button>
+                    <button data-period="month">Month</button>
+                </div>
+            </div>
+            <canvas id="calorieChart"></canvas>
+        </div>
+
+        <!-- Todo Section -->
+        <div class="todo-section">
+            <h2>Today's  Plan</h2>
+            <div class="todo-list" id="todo-list">
+                <!-- Todo items will be dynamically added here -->
+            </div>
+            <button id="add-todo" class="add-todo-btn">
+                <i class="fas fa-plus"></i> Add Workout
+            </button>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
